@@ -20,6 +20,14 @@
     border-color: #974FD0;
 }
 
+.et{
+    color: #292929;
+        font-family: Signika Negative;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+}
 
 .line{
     width: 95%;

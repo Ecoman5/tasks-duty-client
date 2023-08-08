@@ -8,13 +8,13 @@ const Homepage = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className='hmmm'>
         <div>
-          <div className="d-lg-flex justify-content-around align-items-center">
-            <div className="home-manage">
+          <div className="d-md-flex justify-content-around mx-1 my-2 align-items-center">
+            <div className="home-manage"> 
               <h3>
-                Manage your Tasks on <br />{" "}
-                <span className="duty">TaskDuty</span>
+                Manage your Tasks on <br />
+                <span>TaskDuty</span>
               </h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non
@@ -27,7 +27,7 @@ const Homepage = () => {
               </Link>
             </div>
             <div className="home-img">
-              <img src={imggg} alt="" />
+              <img src={imggg} alt="" width='100%' />
             </div>
           </div>
         </div>

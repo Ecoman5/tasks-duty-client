@@ -3,6 +3,10 @@ import HeaderTwo from "../components/HeaderTwo";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoIosArrowBack } from "react-icons/io";
+import { Link, useParams } from "react-router-dom";
+
+
 const Create = () => {
   const redirect = useNavigate();
   const [title, setTitle] = useState("");
@@ -37,8 +41,11 @@ const Create = () => {
       <HeaderTwo />
       <div className="container">
         <div>
-          <h3>New Task</h3>
-
+          <Link to="/all" className="text-decoration-none ">
+            <h3 className="mt-4 et">
+              <IoIosArrowBack /> New Task
+            </h3>
+          </Link>
           <div>
             <form onSubmit={handleSubmit}>
               <ToastContainer />
@@ -49,7 +56,7 @@ const Create = () => {
                 <fieldset>
                   <input
                     type="text"
-                    className="title-input ps-2"
+                    className="title-input  border-1 ps-2"
                     placeholder="E.g Project Defense, Assignment ..."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -63,7 +70,7 @@ const Create = () => {
                 </label>
                 <fieldset>
                   <textarea
-                    className="area ps-2"
+                    className="area ps-2  border-1"
                     name=""
                     id=""
                     cols="30"
@@ -81,7 +88,7 @@ const Create = () => {
                 <fieldset>
                   <input
                     type="text"
-                    className="title-input ps-2"
+                    className="title-input ps-2  border-1"
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
                   />

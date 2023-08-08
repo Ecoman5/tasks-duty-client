@@ -17,21 +17,19 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-           
-            
             <div className="ms-auto my-2 my-lg-0 d-flex">
-              <div className='mt-3 me-3 '>
+              <div className="mt-3 me-3 ">
                 <Nav className="m-auto my-2 my-lg-0" navbarScroll>
                   <Link
                     to="/create"
-                    className="text-decoration-none text-dark fw-bold tag me-2"
+                    className="text-decoration-none text-dark fw-bold tag me-2 px-2"
                   >
                     New Tasks
                   </Link>
 
                   <Link
                     to="/all"
-                    className="text-decoration-none text-dark fw-bold tag"
+                    className="text-decoration-none text-dark fw-bold tag px-2"
                   >
                     All Tasks
                   </Link>

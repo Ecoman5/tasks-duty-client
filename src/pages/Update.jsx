@@ -1,10 +1,11 @@
 import React, { useEffect, useState} from 'react'
 import HeaderTwo from '../components/HeaderTwo'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Loading from "../components/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import {IoIosArrowBack} from "react-icons/io";
 
 const Update = () => {
   const [title, setTitle] = useState('')
@@ -58,7 +59,11 @@ const Update = () => {
         <Loading />
       ) : (
         <div className="container">
-          <h3>Edit task</h3>
+          <Link to="/all" className='text-decoration-none '>
+            <h3 className="mt-4 et">
+              <IoIosArrowBack /> Edit Task
+            </h3>
+          </Link>
           <form onSubmit={handleUpdate}>
             <ToastContainer />
             <div>
@@ -68,7 +73,7 @@ const Update = () => {
               <fieldset>
                 <input
                   type="text"
-                  className="title-input ps-2"
+                  className="title-input border-1 ps-2"
                   placeholder="E.g Project Defense, Assignment ..."
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -82,7 +87,7 @@ const Update = () => {
               </label>
               <fieldset>
                 <textarea
-                  className="area ps-2"
+                  className="area ps-2 border-1 "
                   name=""
                   id=""
                   cols="30"
@@ -95,18 +100,17 @@ const Update = () => {
 
             <div>
               <label>
-                <legend className="Task-header">Tags:</legend>
+                <legend className="Task-header ">Tags:</legend>
               </label>
               <fieldset>
                 <input
                   type="text"
-                  className="title-input ps-2"
+                  className="title-input ps-2 border-1 "
                   value={tags}
                   onChange={(e) => setTags(e.target.value)}
                 />
               </fieldset>
             </div>
-
             <div>
               <button className="form-done mt-5">Done</button>
             </div>

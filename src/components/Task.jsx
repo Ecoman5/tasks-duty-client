@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Task = ({title, description, tags, _id}) => {
-  const handleDelete = async (id) =>{
-  try {
-    const url = `https://taskapi-jo15.onrender.com/api/tasks/${_id}`;
-    const res = await fetch(url, {
-      method: 'DELETE'
-    });
-    const data = await res.json();
-    if (data.success){
-      window.location.reload();
+const Task = ({ title, description, tags, _id }) => {
+  const handleDelete = async (id) => {
+    try {
+      const url = `https://taskapi-jo15.onrender.com/api/tasks/${_id}`;
+      const res = await fetch(url, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
-  }
-  }
+  };
   return (
     <div className="container">
       <div className="border border-1 task-box">
@@ -34,19 +34,19 @@ const Task = ({title, description, tags, _id}) => {
             </button>
           </div>
         </div>
-        <div className='liner d-flex justify-content-center align-items-center'>
+        <div className="liner d-flex justify-content-center align-items-center">
           <hr className="line" />
         </div>
         <h3 className="fw-bold text-capitalize p-2">{title}</h3>
-        <p className='p-2'>{description}</p>
+        <p className="p-2">{description}</p>
       </div>
-      <div className='d-flex justify-content-center align-items-center mt-5'>
-        <Link to="/all" className='text-decoration-none'>
-        <p className='back'>Back to Top</p>
+      <div className="d-flex justify-content-center align-items-center mt-5">
+        <Link to="/all" className="text-decoration-none">
+          <p className="back">Back to Top</p>
         </Link>
       </div>
     </div>
   );
-}
+};
 
-export default Task
+export default Task;
